@@ -10,15 +10,36 @@
     <h2>Author :{{author}}</h2>
     <h2>Age :{{age}}</h2>
     <h2>list :{{list}}</h2>
+    
 
     <h1>{{lst | join:"-"}}</h1>
     <h1>{{birthday | date:"D d M Y"}}</h1>
-
+    <h2>{{ value5 | make_list }}</h2>
     <h1>{{"python is fun" | cut:" "}}</h1>
     <h1>{{val | length}}</h1>
     <h1>{{'happpppppy coding' | truncatechars:6}}</h1>
     <h1>{{'happpppppy coddddddddddddding nowwwwwwwwwwwwwwwww' | truncatewords:2}}</h1>
     <h1>{{'Happy coding. Python is fun.' | truncatewords:2}}</h1>
+    <h2>{{ some_list | slice:":2" }}</h2>
+    <h2>{{ value4 | random }}</h2>
+    <h2>{{ my_data2 | title }}</h2>
+   <h2>{{ value | first }}</h2>
+   <h2>{{ value | last }}</h2>
+   <h2>{{ my_data | linenumbers }}</h2>
+   <h2>{{ value3 | lower }}</h2>
+   <h2>{{ value2 | lower }}</h2>
+
+
+   {% for person in people %}
+   Name: {{ person.name }}, Age: {{ person.age }}
+   {% if person.age|divisibleby:"3" %}
+       (Divisible by 3)
+   {% else %}
+       (Not divisible by 3)
+   {% endif %}
+   <br>
+{% endfor %}
+
     {% comment %} conditional operator {% endcomment %}
 {% if age >= 20 %}
 <h4>You will get driving license</h4>
